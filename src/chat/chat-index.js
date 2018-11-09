@@ -33,7 +33,7 @@ function getUserId () {
     if (store.enabled) {
         return store.get('userId') || store.set('userId', generateRandomId());
     } else {
-        return generateRandomId();
+        return generateRandomId() + '[site.ru]';
     }
 }
 
