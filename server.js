@@ -18,7 +18,6 @@ app.post('/hook', function(req, res){
         const name = message.chat.first_name || message.chat.title || "admin";
         const text = message.text || "";
         const reply = message.reply_to_message;
-        console.log(req.body.message);
 
 
         if (text.startsWith("/start")) {
@@ -52,6 +51,7 @@ io.on('connection', function(client){
         let widgetDomain;
         let messageReceived = false;
         console.log("useId " + userId + " connected to chatId " + chatId);
+        console.log(req.body.message);
 
         client.on('message', function(msg) {
             messageReceived = true;
