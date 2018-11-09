@@ -3,6 +3,7 @@ import io from 'socket.io-client'
 
 import { h, Component } from 'preact';
 import MessageArea from './message-area';
+let SITENAME = "*pift.ru";
 
 export default class Chat extends Component {
 
@@ -51,7 +52,7 @@ export default class Chat extends Component {
     handleKeyPress = (e) => {
         if (e.keyCode == 13 && this.input.value) {
             let text = this.input.value;
-            this.socket.send({text, from: 'visitor', visitorName: this.props.conf.visitorName + '[site.com]'});
+            this.socket.send({text, from: 'visitor', visitorName: this.props.conf.visitorName + SITENAME});
             this.input.value = '';
 
             if (this.autoResponseState === 'pristine') {
