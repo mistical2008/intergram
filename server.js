@@ -49,7 +49,7 @@ io.on('connection', function(client){
         let chatId = registerMsg.chatId;
         let widgetDomain;
         let messageReceived = false;
-        console.log("useId " + userId + " connected to chatId " + chatId + '/n' + req.body.message);
+        console.log("useId " + userId + " connected to chatId " + chatId);
 
         client.on('message', function(msg) {
             messageReceived = true;
