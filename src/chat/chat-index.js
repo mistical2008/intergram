@@ -38,5 +38,5 @@ function getUserId () {
 }
 
 function generateRandomId() {
-    return Math.random().toString(36).substr(2, 6) + '[site.ru]';
+    return Math.random().toString(36).substr(2, 6) + 'site.ru';
 }
