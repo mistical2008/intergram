@@ -3,7 +3,7 @@ import io from 'socket.io-client'
 
 import { h, Component } from 'preact';
 import MessageArea from './message-area';
-let SITENAME = "*pift.ru";
+let SITENAME = "-pift.ru-";
 
 export default class Chat extends Component {
 
