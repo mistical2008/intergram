@@ -15,7 +15,7 @@ if (confString) {
 render(
     <Chat
         chatId={getUrlParameter('id')}
-        userId={getUserId() + ':site.ru'}
+        userId={getUserId()}
         host={getUrlParameter('host')}
         conf={conf}
     />,
@@ -38,5 +38,5 @@ function getUserId () {
 }
 
 function generateRandomId() {
-    return Math.random().toString(36).substr(2, 6);
+    return Math.random().toString(36).substr(2, 6) + '[site.ru]';
 }
