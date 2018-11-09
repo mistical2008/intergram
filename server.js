@@ -54,7 +54,7 @@ io.on('connection', function(client){
         client.on('message', function(msg) {
             messageReceived = true;
             io.emit(chatId + "-" + userId, msg);
-            let visitorName = msg.visitorName ? "[" + msg.visitorName + "]_site.ru: " : "";
+            let visitorName = msg.visitorName ? "[" + msg.visitorName + "-site.ru" + "]: " : "";
             sendTelegramMessage(chatId, userId + ":" + visitorName + " " + msg.text);
         });
 
