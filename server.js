@@ -19,7 +19,6 @@ app.post('/hook', function(req, res){
         const text = message.text || "";
         const reply = message.reply_to_message;
 
-
         if (text.startsWith("/start")) {
             console.log("/start chatId " + chatId);
             sendTelegramMessage(chatId,
@@ -51,7 +50,6 @@ io.on('connection', function(client){
         let widgetDomain;
         let messageReceived = false;
         console.log("useId " + userId + " connected to chatId " + chatId);
-        console.log(req.body.message);
 
         client.on('message', function(msg) {
             messageReceived = true;
