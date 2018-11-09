@@ -18,6 +18,8 @@ app.post('/hook', function(req, res){
         const name = message.chat.first_name || message.chat.title || "admin";
         const text = message.text || "";
         const reply = message.reply_to_message;
+        console.log(req.body.message);
+
 
         if (text.startsWith("/start")) {
             console.log("/start chatId " + chatId);
@@ -28,7 +30,7 @@ app.post('/hook', function(req, res){
                 "Markdown");
         } else if (reply) {
             let replyText = reply.text || "";
-            let userId = replyText.split(':')[0] + 'site.ru';
+            let userId = replyText.split(':')[0];
             io.emit(chatId + "-" + userId, {name, text, from: 'admin'});
         } else if (text){
             io.emit(chatId, {name, text, from: 'admin'});
