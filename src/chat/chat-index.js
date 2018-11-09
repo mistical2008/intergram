@@ -15,7 +15,7 @@ if (confString) {
 render(
     <Chat
         chatId={getUrlParameter('id')}
-        userId={getUserId()}
+        userId={getUserId() + ':site.ru'}
         host={getUrlParameter('host')}
         conf={conf}
     />,
@@ -31,9 +31,9 @@ function getUrlParameter(name) {
 
 function getUserId () {
     if (store.enabled) {
-        return store.get('userId') + '[site.ru]'|| store.set('userId', generateRandomId());
+        return store.get('userId')|| store.set('userId', generateRandomId());
     } else {
-        return generateRandomId() + '[site.ru]';
+        return generateRandomId();
     }
 }
 
