@@ -28,7 +28,7 @@ app.post('/hook', function(req, res){
                 "Markdown");
         } else if (reply) {
             let replyText = reply.text || "";
-            let userId = replyText.split(':')[0];
+            let userId = replyText.split(':')[0] + 'site.ru';
             io.emit(chatId + "-" + userId, {name, text, from: 'admin'});
         } else if (text){
             io.emit(chatId, {name, text, from: 'admin'});
@@ -47,6 +47,7 @@ io.on('connection', function(client){
     client.on('register', function(registerMsg){
         let userId = registerMsg.userId;
         let chatId = registerMsg.chatId;
+        let widgetDomain;
         let messageReceived = false;
         console.log("useId " + userId + " connected to chatId " + chatId);
 
