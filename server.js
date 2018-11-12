@@ -80,8 +80,9 @@ function sendTelegramMessage(chatId, text, parseMode) {
             "parse_mode": parseMode,
             "reply_markup": JSON.stringify({
                 inline_keyboard: [
-                  [{ text: 'Ответить ✍️', switch_inline_query: 'share' }]
-                ]
+                  [{ text: 'Ответить ✍️', callback_data: "reply_to_message" }]
+                ],
+                "force_reply": true
               })
         });
 }
