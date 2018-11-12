@@ -77,7 +77,12 @@ function sendTelegramMessage(chatId, text, parseMode) {
         .form({
             "chat_id": chatId,
             "text": text,
-            "parse_mode": parseMode
+            "parse_mode": parseMode,
+            "reply_markup": JSON.stringify({
+                inline_keyboard: [
+                  [{ text: 'Ответить ✍️', callback_data: "reply_to_message"}]
+                ]
+            })
         });
 }
 
