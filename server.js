@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const SITENAME = 'PIFT.RU';
+const SITENAME = '__PIFT.RU';
 
 app.use(express.static('dist', {index: 'demo.html', maxage: '4h'}));
 app.use(bodyParser.json());
@@ -46,7 +46,7 @@ app.post('/hook', function(req, res){
 io.on('connection', function(client){
 
     client.on('register', function(registerMsg){
-        let userId = registerMsg.userId + '-PIFT.RU';
+        let userId = SITENAME ? registerMsg.userId + SITENAME : registerMsg.userId;
         let chatId = registerMsg.chatId;
         let widgetDomain;
         let messageReceived = false;
