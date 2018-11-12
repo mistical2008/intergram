@@ -46,7 +46,7 @@ app.post('/hook', function(req, res){
 io.on('connection', function(client){
 
     client.on('register', function(registerMsg){
-        let userId = registerMsg.userId;
+        let userId = registerMsg.userId + '-PIFT.RU';
         let chatId = registerMsg.chatId;
         let widgetDomain;
         let messageReceived = false;
@@ -55,7 +55,7 @@ io.on('connection', function(client){
         client.on('message', function(msg) {
             messageReceived = true;
             io.emit(chatId + "-" + userId, msg);
-            let visitorName = msg.visitorName ? "[PIFT.RU_" + msg.visitorName + "]: " : "";
+            let visitorName = msg.visitorName ? "[" + msg.visitorName + "]: " : "";
             sendTelegramMessage(chatId, userId + ":" + visitorName + " " + msg.text);
         });
 
