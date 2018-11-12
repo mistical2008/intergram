@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const SITENAME = "PIFT.RU";
 
 app.use(express.static('dist', {index: 'demo.html', maxage: '4h'}));
 app.use(bodyParser.json());
@@ -54,7 +55,7 @@ io.on('connection', function(client){
         client.on('message', function(msg) {
             messageReceived = true;
             io.emit(chatId + "-" + userId, msg);
-            let visitorName = msg.visitorName ? "[" + msg.visitorName + "]: " : "";
+            let visitorName = msg.visitorName ? "[" + msg.visitorName + SITENAME + "]: " : "";
             sendTelegramMessage(chatId, userId + ":" + visitorName + " " + msg.text);
         });
 
