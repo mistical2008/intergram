@@ -77,10 +77,7 @@ function sendTelegramMessage(chatId, text, parseMode) {
         .form({
             "chat_id": chatId,
             "text": text,
-            "parse_mode": parseMode,
-            "reply_markup": {
-                "force_reply": True
-            }
+            "parse_mode": parseMode
         });
 }
 
