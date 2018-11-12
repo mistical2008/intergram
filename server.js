@@ -8,7 +8,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 // Задаем имя сайта в одинарных кавычках
-const SITENAME = '__PIFT.RU'; // Менять только эту строку!
+const SITENAME = '__PIFT.RU: '; // Менять только эту строку!
 // --------------------------
 
 app.use(express.static('dist', {index: 'demo.html', maxage: '4h'}));
@@ -64,7 +64,7 @@ io.on('connection', function(client){
 
         client.on('disconnect', function(){
             if (messageReceived) {
-                sendTelegramMessage(chatId, userId + SITENAME + " has left");
+                sendTelegramMessage(chatId, userId + SITENAME: + " has left");
             }
         });
     });
