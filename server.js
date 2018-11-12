@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+
+// Менять только эту строку!
 const SITENAME = '__PIFT.RU';
+// --------------------------
 
 app.use(express.static('dist', {index: 'demo.html', maxage: '4h'}));
 app.use(bodyParser.json());
