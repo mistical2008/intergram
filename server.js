@@ -49,7 +49,7 @@ app.post('/hook', function(req, res){
 io.on('connection', function(client){
 
     client.on('register', function(registerMsg){
-        let userId = SITENAME ? registerMsg.userId + SITENAME : registerMsg.userId;
+        let userId = registerMsg.userId;
         let chatId = registerMsg.chatId;
         let widgetDomain;
         let messageReceived = false;
