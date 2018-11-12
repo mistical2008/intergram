@@ -81,15 +81,11 @@ function sendTelegramMessage(chatId, text, parseMode) {
             "reply_markup": {
                 "inline_keyboard": [
                         [{
-                               "text": "test1",
+                               "text": "Respond",
                                "callback_data": "test1"
-                        }],
-                        [{
-                               "text": "test2",
-                               "callback_data": "test2"
                         }]
                 ]
-        }
+            }
         });
 }
 
