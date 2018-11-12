@@ -64,7 +64,7 @@ io.on('connection', function(client){
 
         client.on('disconnect', function(){
             if (messageReceived) {
-                sendTelegramMessage(chatId, userId + SITENAME + ": has left");
+                sendTelegramMessage(chatId, userId + SITENAME + " Вышел из чата");
             }
         });
     });
