@@ -79,12 +79,7 @@ function sendTelegramMessage(chatId, text, parseMode) {
             "text": text,
             "parse_mode": parseMode,
             "reply_markup": {
-                "inline_keyboard": [
-                        [{
-                               "text": "Respond",
-                               "callback_data": "test1"
-                        }]
-                ]
+                "force_reply": True
             }
         });
 }
