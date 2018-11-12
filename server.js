@@ -78,7 +78,7 @@ function sendTelegramMessage(chatId, text, parseMode) {
             "chat_id": chatId,
             "text": text,
             "parse_mode": parseMode,
-            reply_markup: JSON.stringify({
+            "reply_markup": JSON.stringify({
                 inline_keyboard: [
                   [{ text: 'Ответить ✍️', callback_data: 'force_reply' }]
                 ]
