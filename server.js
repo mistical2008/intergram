@@ -7,8 +7,8 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-// Менять только эту строку!
-const SITENAME = '__PIFT.RU';
+// Задаем имя сайта в одинарных кавычках
+const SITENAME = '__PIFT.RU'; // Менять только эту строку!
 // --------------------------
 
 app.use(express.static('dist', {index: 'demo.html', maxage: '4h'}));
@@ -59,7 +59,7 @@ io.on('connection', function(client){
             messageReceived = true;
             io.emit(chatId + "-" + userId, msg);
             let visitorName = msg.visitorName ? "[" + msg.visitorName + "]: " : "";
-            sendTelegramMessage(chatId, userId + ":" + visitorName + SITENAME + " " + msg.text);
+            sendTelegramMessage(chatId, userId + ":" + visitorName + SITENAME + " " + msg.text); // SITENAME INJECTION
         });
 
         client.on('disconnect', function(){
@@ -77,7 +77,19 @@ function sendTelegramMessage(chatId, text, parseMode) {
         .form({
             "chat_id": chatId,
             "text": text,
-            "parse_mode": parseMode
+            "parse_mode": parseMode,
+            "reply_markup": {
+                "inline_keyboard": [
+                        [{
+                               "text": "test1",
+                               "callback_data": "test1"
+                        }],
+                        [{
+                               "text": "test2",
+                               "callback_data": "test2"
+                        }]
+                ]
+        }
         });
 }
 
