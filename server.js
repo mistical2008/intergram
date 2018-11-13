@@ -72,7 +72,7 @@ io.on('connection', function(client){
                 "user": registerMsg.message_id,
                 "message": registerMsg.text
             }).then(message => console.log(message._id));
-            console.log(registerMsg.message_id, registerMsg.text);
+            console.log('registerMsg:' + registerMsg);
 
 
         });
