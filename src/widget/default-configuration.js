@@ -14,6 +14,5 @@ export const defaultConfiguration = {
     mainColor: '#1f8ceb',
     alwaysUseFloatingButton: false,
     desktopHeight: 450,
-    desktopWidth: 370,
-    SITENAME: '__PIFT.RU'
+    desktopWidth: 370
 };
