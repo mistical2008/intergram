@@ -29,6 +29,8 @@ app.post('/hook', function(req, res){
         const chatId = message.chat.id;
         const name = message.chat.first_name || message.chat.title || "admin";
         const text = message.text || "";
+        console.log(message.text);
+
         const reply = message.reply_to_message;
 
         if (text.startsWith("/start")) {
@@ -70,7 +72,7 @@ io.on('connection', function(client){
             sendTelegramMessage(chatId, userId + ":" + visitorName + SITENAME + " " + msg.text); // SITENAME INJECTION
             TgMessage.create({
                 "user": userId,
-                "message": msg
+                "message": JSON.stringify(client)
             }).then(message => console.log(message._id));
             console.log('registerMsg:' + JSON.stringify(registerMsg));
 
