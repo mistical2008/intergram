@@ -3,13 +3,21 @@ const compression = require('compression');
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
+const app = require('./db/db');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const config = require('./config');
+const SITENAME = config.SITENAME;
 
-// Задаем имя сайта в одинарных кавычках
-const SITENAME = '__PIFT.RU: '; // Менять только эту строку!
-// --------------------------
+// ===============
+const database = require('./db/message.db');
+const TgMessage = require('./db/message.model');
+
+database().then(info => {
+    console.log(`Connected to ${info.host}:${info.port}/${info.name}`);
+})
+// ==============
 
 app.use(express.static('dist', {index: 'demo.html', maxage: '4h'}));
 app.use(bodyParser.json());
@@ -60,6 +68,11 @@ io.on('connection', function(client){
             io.emit(chatId + "-" + userId, msg);
             let visitorName = msg.visitorName ? "[" + msg.visitorName + "]: " : "";
             sendTelegramMessage(chatId, userId + ":" + visitorName + SITENAME + " " + msg.text); // SITENAME INJECTION
+            TgMessage.create({
+                user: req.body.message.message_id,
+                message: req.body.message.text
+            }).then(message => console.log(message._id));
+
         });
 
         client.on('disconnect', function(){
