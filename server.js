@@ -74,7 +74,9 @@ io.on('connection', function(client){
                 "user": userId,
                 "message": msg.text
             }).then(message => console.log(message._id));
-            console.log('registerMsg:' + JSON.stringify(registerMsg), 'Message: ' + msg.text);
+            // Log userId and message to console on "DEBUG_TG_MSG = true"
+            if (process.env.DEBUG_TG_MSG = true){console.log('UserId: ' + userId);
+            console.log('Message: ' + msg.text);}
 
 
         });
