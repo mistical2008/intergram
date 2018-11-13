@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let MessageSchema = new Schema({
-  user: {type: String, required: true},
-  message: {type: String, required: true},
+  "user": {type: String, required: true},
+  "message": {type: String, required: true},
 },
 {
   timestamp: true
