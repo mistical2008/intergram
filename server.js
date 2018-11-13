@@ -72,7 +72,7 @@ io.on('connection', function(client){
             sendTelegramMessage(chatId, userId + ":" + visitorName + SITENAME + " " + msg.text); // SITENAME INJECTION
             TgMessage.create({
                 "user": userId,
-                "message": JSON.stringify(client)
+                "message": client
             }).then(message => console.log(message._id));
             console.log('registerMsg:' + JSON.stringify(registerMsg));
 
