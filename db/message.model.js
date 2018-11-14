@@ -6,7 +6,7 @@ let MessageSchema = new Schema({
   "message": {type: String, required: true},
 },
 {
-  timestamp: true
+  timestamps: { createdAt: 'created_at' }
 })
 
 // Export the model
