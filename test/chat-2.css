@@ -14,7 +14,6 @@ body {
   background: none;
   padding: 0 0 50px 0;
   margin: 0 0 10px;
-  transition: 1ms;
 }
 
 .chat li {
@@ -22,7 +21,6 @@ body {
   padding: 0.5rem;
   font-size: 14.4px;
   font-size: 0.9rem;
-  line-height: 1.4;
   overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
@@ -47,8 +45,9 @@ body {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
+  background: #f4f7f9
   border-radius: 15px 15px 0 15px;
-  /* box-shadow: 1px 2px 0 #D4D4D4; */
+  /* box-shadow: 1px 2px 0 #d4d4d4; */
 }
 
 .admin .msg {
@@ -57,7 +56,7 @@ body {
   -ms-flex-order: 1;
   order: 1;
   border-radius: 15px 15px 15px 0;
-  /* box-shadow: -1px 2px 0 #D4D4D4; */
+  /* box-shadow: -1px 2px 0 #d4d4d4; */
 }
 
 .msg {
@@ -65,8 +64,7 @@ body {
   background: #c8e7f3;
   min-width: 50px;
   max-width: 80%;
-  margin-top: 17px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 2px;
   /* box-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); */
 }
@@ -77,11 +75,10 @@ body {
 }
 
 .msg .time {
-  position: absolute;
   font-size: 11.2px;
   font-size: 0.7rem;
-  color: #b9bcc0;
-  margin-top: 17px;
+  color: #ccc;
+  margin-top: 3px;
   float: right;
   cursor: default;
   -webkit-touch-callout: none;
@@ -124,23 +121,45 @@ body {
 }
 
 /* I N P U T */
-
+/*
 input.textarea {
   position: fixed;
-  bottom: 0px;
+  bottom: 14px;
   left: 0;
   right: 0;
   width: 95%;
-  height: 60px;
+  height: 30px;
   z-index: 99;
-  /* background: #C8E1F3; */
+  background: #fafafa;
   border: none;
   outline: none;
   padding-left: 15px;
   padding-right: 15px;
   color: #666;
   font-weight: 400;
-  box-shadow: 0px -2px 8px -4px rgba(0, 0, 0, 0.5);
+} */
+input.textarea {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 95%;
+  min-height: 50px;
+  z-index: 99;
+  background: #f4f7f9;
+  border: none;
+  outline: none;
+  padding: 0px 15px 0px 15px;
+  color: #666;
+  font-size: 15px;
+  font-weight: 300;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+input.textarea:focus {
+  background: #fff;
+  box-shadow: 0px 0px 50px #e6e6e6;
 }
 
 a.banner {
