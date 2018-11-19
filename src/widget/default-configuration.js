@@ -1,11 +1,11 @@
 export const defaultConfiguration = {
-  titleClosed: "Click to chat!",
-  titleOpen: "Let's chat!",
-  titleBase: "Старший консультант",
+  titleClosed: "Начать чат с оператором!",
+  titleOpen: "Чат с оператором",
   closedStyle: "chat", // button or chat
   closedChatAvatarUrl: "./media/demo_avatar.jpg", // only used if closedStyle is set to 'chat'
   cookieExpiration: 1, // in days. Once opened, closed chat title will be shown as button (when closedStyle is set to 'chat')
   introMessage: "Здравствуйте! Чем я могу вам помочь?",
+  mangerName: "Елена",
   autoResponse:
     "Looking for the first available admin (It might take a minute)",
   autoNoResponse:
