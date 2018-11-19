@@ -45,7 +45,7 @@ body {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  background: #f4f7f9
+  background: #f4f7f9;
   border-radius: 15px 15px 0 15px;
   /* box-shadow: 1px 2px 0 #d4d4d4; */
 }
