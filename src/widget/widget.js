@@ -71,6 +71,45 @@ export default class Widget extends Component {
         {/*Chat IFrame*/}
         <div
           style={{
+            display: "flex",
+            justifyContent: "start",
+            alignItems: "center",
+            width: "100%",
+            // height: "20px",
+            // borderRadius: "50%",
+            position: "relative",
+            padding: "5px 0 5px 20px",
+            // paddingTop: "8px",
+            // paddingBottom: "8px",
+            background: "#fff",
+            boxShadow: "rgba(5.5%, 22.7%, 28.6%, 0.3) 0 1px"
+          }}
+        >
+          <div
+            style={{
+              height: "35px",
+              width: "35px",
+              borderRadius: "50%",
+              boxShadow: "rgba(5.5%, 22.7%, 28.6%, 0.05) 0 0 0 1px",
+              background:
+                "#107896 no-repeat url('../media/demo_avatar.jpg') center center",
+              backgroundSize: "contain"
+            }}
+          />
+          <div
+            style={{
+              marginLeft: "16px",
+              color: "#075166",
+              fontSize: "16px",
+              verticalAlign: "middle",
+              lineHeight: "1"
+            }}
+          >
+            {conf.mangerName}
+          </div>
+        </div>
+        <div
+          style={{
             display: isChatOpen ? "block" : "none",
             height: isMobile ? "100%" : desktopHeight
           }}
