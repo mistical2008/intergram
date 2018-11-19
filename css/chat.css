@@ -77,8 +77,8 @@ body {
 .msg .time {
   font-size: 11.2px;
   font-size: 0.7rem;
-  color: #ccc;
-  margin-top: 3px;
+  color: #155e76;
+  margin-top: 7px;
   float: right;
   cursor: default;
   -webkit-touch-callout: none;
@@ -165,17 +165,18 @@ a.banner {
 }
 
 .button_send {
+    background: #107996 no-repeat url('../media/telegram_icon_128.svg') center center ;
     cursor: pointer;
     position: fixed;
     z-index: 101;
-    bottom: 2px;
-    right: 0;
-    padding: 22px;
-    background: #107896;
+    bottom: 3px;
+    right: 3px;
+    padding: 21px;
     border-radius: 50%;
     border: none;
     outline: none;
+    transition: all 0.2s;
 }
 .button_send:hover {
-    background: #107996;
-}
+    transform: scale(1.1);
+    transition: all 0.2s;
