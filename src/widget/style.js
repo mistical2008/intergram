@@ -4,9 +4,10 @@ export const desktopWrapperStyle = {
   right: "20px",
   zIndex: 2147483647,
   borderRadius: "10px",
+  width: "370px",
   background: "rgb(229, 229, 229)",
   boxSizing: "content-box",
-  boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.5)",
+  boxShadow: "0px 0px 30px rgba(4.5%, 25.5%, 31.6%, 0.4)",
   overflow: "hidden"
 };
 
@@ -48,7 +49,7 @@ export const mobileOpenWrapperStyle = {
 export const desktopTitleStyle = {
   height: "40px",
   lineHeight: "30px",
-  fontSize: "20px",
+  fontSize: "16px",
   display: "flex",
   justifyContent: "space-between",
   padding: "5px 0 5px 20px",
