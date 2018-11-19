@@ -75,12 +75,8 @@ export default class Widget extends Component {
             justifyContent: "start",
             alignItems: "center",
             width: "100%",
-            // height: "20px",
-            // borderRadius: "50%",
             position: "relative",
             padding: "5px 0 5px 20px",
-            // paddingTop: "8px",
-            // paddingBottom: "8px",
             background: "#fff",
             boxShadow: "rgba(5.5%, 22.7%, 28.6%, 0.3) 0 1px"
           }}

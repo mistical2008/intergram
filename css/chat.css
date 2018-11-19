@@ -28,6 +28,10 @@ body {
   display: flex;
 }
 
+.chat li:first-child {
+  margin-top: 10px;
+}
+
 .visitor {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
@@ -45,7 +49,7 @@ body {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  background: #f4f7f9;
+  background: #f2f2f3;
   border-radius: 15px 15px 0 15px;
 }
 
@@ -54,12 +58,12 @@ body {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
+  background: #c8e7f3;
   border-radius: 15px 15px 15px 0;
 }
 
 .msg {
   word-wrap: break-word;
-  background: #c8e7f3;
   min-width: 50px;
   max-width: 80%;
   padding: 10px;
@@ -68,6 +72,7 @@ body {
 .msg p {
   margin: 0 0 3.2px 0;
   margin: 0 0 0.2rem 0;
+  line-height: 1.4;
 }
 
 .msg .time {
