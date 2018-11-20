@@ -14,3 +14,7 @@ dist/
 npm-debug.log*
 
 package-lock.json
+
+# other
+test
+shrinkwrap.yaml
