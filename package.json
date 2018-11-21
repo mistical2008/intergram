@@ -9,9 +9,8 @@
   "scripts": {
     "start": "TELEGRAM_TOKEN='703853156:AAF9OmMzWjg8nK8u8gSI3wivGvo1-V3Z3VM' DEBUG_TG_MSG='false' node server.js",
     "postinstall": "npm run build",
-    "dev": "yarn start http://localhost:5000/demo.html & node devServer.js",
+    "dev": "yarn start http://localhost:3000/demo.html & node devServer.js",
     "build": "shx mkdir -p dist && shx cp *.html dist && shx cp -r ./media dist && shx cp -r ./css dist && webpack -p",
-    "public": "shx cp *.html /var/www/html/ && shx cp -r ./media /var/www/html/ && shx cp -r ./css /var/www/html/ && webpack -p",
     "test": "npm run -s lint",
     "lint": "eslint src"
   },
